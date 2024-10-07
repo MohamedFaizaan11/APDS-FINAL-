@@ -1,0 +1,92 @@
+/* src/components/Login.css */
+.login-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIxfHxjb250ZXh0JTIwZGVza3xlbnwwfHx8fDE2ODQwNjQ5MjQ&ixlib=rb-1.2.1&q=80&w=1080');
+    background-size: cover;
+    background-position: center;
+    color: white; /* Set text color to white for better readability */
+    font-family: Arial, sans-serif; /* Use a professional font */
+  }
+  
+  .welcome-message {
+    position: absolute; /* Position it absolutely at the top */
+    top: 20px; /* Space from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position to truly center */
+    font-size: 2em; /* Larger font size for visibility */
+    text-align: center; /* Center text alignment */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better contrast */
+    margin-bottom: 20px; /* Space below the welcome message */
+  }
+  
+  .login-content {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    max-width: 400px; /* Limit the width */
+  }
+  
+  h2 {
+    margin-bottom: 10px; /* Reduced space for a tighter design */
+  }
+  
+  p {
+    margin-bottom: 20px; /* Space below the welcoming message */
+    font-size: 1.1em; /* Slightly larger font for better visibility */
+  }
+  
+  .input-group {
+    margin-bottom: 15px; /* Space between input fields */
+    text-align: left; /* Align labels to the left */
+  }
+  
+  .input-group label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 5px; /* Space between label and input */
+  }
+  
+  input {
+    width: 100%; /* Full width for inputs */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners for inputs */
+  }
+  
+  .login-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff; /* Bootstrap primary color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .error-message {
+    color: red; /* Error message color */
+    margin-bottom: 15px; /* Space below error message */
+  }
+  
+  .register-link {
+    margin-top: 10px; /* Space above the register link */
+    font-size: 0.9em; /* Slightly smaller font */
+  }
+  
+  .register-link button {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: #007bff; /* Bootstrap primary color for links */
+    cursor: pointer; /* Pointer cursor */
+    text-decoration: underline; /* Underline text */
+  }
+  
