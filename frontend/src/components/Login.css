@@ -1,0 +1,92 @@
+/* src/components/Login.css */
+.login-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIxfHxjb250ZXh0JTIwZGVza3xlbnwwfHx8fDE2ODQwNjQ5MjQ&ixlib=rb-1.2.1&q=80&w=1080');
+    background-size: cover;
+    background-position: center;
+    color: white; 
+    font-family: Arial, sans-serif; 
+  }
+  
+  .welcome-message {
+    position: absolute; 
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-size: 2em; 
+    text-align: center; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    margin-bottom: 20px; 
+  }
+  
+  .login-content {
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 30px;
+    border-radius: 10px; 
+    text-align: center;
+    max-width: 400px; 
+  }
+  
+  h2 {
+    margin-bottom: 10px; 
+  }
+  
+  p {
+    margin-bottom: 20px; 
+    font-size: 1.1em; 
+  }
+  
+  .input-group {
+    margin-bottom: 15px; 
+    text-align: left; 
+  }
+  
+  .input-group label {
+    display: block; 
+    margin-bottom: 5px; 
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+  }
+  
+  .login-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3; 
+  }
+  
+  .error-message {
+    color: red; 
+    margin-bottom: 15px; 
+  }
+  
+  .register-link {
+    margin-top: 10px; 
+    font-size: 0.9em; 
+  }
+  
+  .register-link button {
+    background: none; 
+    border: none; 
+    color: #007bff; 
+    cursor: pointer; 
+    text-decoration: underline; 
+  }
+  

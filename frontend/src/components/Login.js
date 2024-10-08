@@ -24,8 +24,10 @@ const Login = () => {
     setLoading(true);
 
     try {
+      // Send the email and password to the backend for authentication
       const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
-      console.log(response.data);
+
+      // If the login is successful, navigate to the home page
       if (response.data.success) {
         navigate('/home');
       } else {
@@ -33,10 +35,11 @@ const Login = () => {
       }
     } catch (error) {
       console.error(error);
+      // Handle the error message from the server
       if (error.response && error.response.data.message) {
         setError(error.response.data.message);
       } else {
-        setError('Login failed. Please check your credentials.');
+        setError('Login failed. Please try again.');
       }
     } finally {
       setLoading(false);
