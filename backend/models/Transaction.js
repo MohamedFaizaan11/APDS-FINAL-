@@ -35,6 +35,20 @@ const transactionSchema = new mongoose.Schema({
   },
 // cvv number for users card
 
+status: {
+  type: String,
+  enum: ['pending', 'approved', 'denied'], // Define the possible statuses
+  default: 'pending', // Set default status to pending
+},
+
+userEmail: String, // New field for user's email
+
+date: { type: Date, default: Date.now }
+
+
+
+
+
 }, { timestamps: true });
 
 transactionSchema.pre('save', async function (next) {

@@ -1,5 +1,4 @@
 // src/components/Login.js
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -12,8 +11,15 @@ const Login = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  // Hardcoded employee credentials
+  const employeeCredentials = {
+    email: 'user1@mail.com',
+    password: 'Jake123!',
+  };
+
   // Define patterns for email and password validation
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,29 +40,50 @@ const Login = () => {
     setLoading(true); // Show loading state
 
     try {
-      // Send the email and password to the backend for authentication
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      // Check for hardcoded employee credentials
+      if (email === employeeCredentials.email && password === employeeCredentials.password) {
+        localStorage.setItem('userToken', 'dummy_token');
+        localStorage.setItem('role', 'employee');
+        navigate('/employeedashboard');
+        return;
+      }
 
-      // If the login is successful, navigate to the home page
+      // Prepare employee data for the API request
+      const employeeData = { email, password };
+
+      // First API call
+      const response1 = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+
+      // Handle the response from the first API call
+      if (response1.data.success) {
+        localStorage.setItem('userToken', response1.data.token);
+        localStorage.setItem('role', response1.data.role);
+        navigate('/home');
+        return;
+      }
+
+      // Second API call for employee authentication
+      const response = await axios.post('http://localhost:5000/api/employees', employeeData);
+
+      // Handle the response from the second API call
       if (response.data.success) {
+        localStorage.setItem('userToken', response.data.token);
+        localStorage.setItem('role', response.data.role);
         navigate('/home');
       } else {
-        // If login fails due to incorrect password or other credentials
-        setError('Incorrect email or password.'); // Specific error message for incorrect credentials
-        setPassword(''); // Clear the password field after a failed attempt
+        setError('Invalid credentials. Please try again.'); // Show invalid credentials message
+        setPassword(''); // Clear password field on failure
       }
     } catch (error) {
       console.error(error);
-      // Handle the error message from the server
       if (error.response && error.response.data.message) {
-        setError(error.response.data.message); // Show specific error message from server
-        setPassword(''); // Clear the password field
+        setError(error.response.data.message);
       } else {
-        setError('Login failed. Please try again.'); // Generic error message
-        setPassword(''); // Clear the password field
+        setError('Login failed. Please try again.');
       }
+      setPassword(''); // Clear password field on error
     } finally {
-      setLoading(false); // Hide loading state
+      setLoading(false);
     }
   };
 

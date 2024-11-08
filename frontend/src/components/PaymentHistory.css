@@ -1,0 +1,29 @@
+/* src/components/PaymentHistory.css */
+.payment-history {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .payment-history h2 {
+    margin-bottom: 20px;
+  }
+  
+  .payment-history table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .payment-history table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .payment-history th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .payment-history tr:hover {
+    background-color: #f1f1f1;
+  }
+  

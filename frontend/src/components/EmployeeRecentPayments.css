@@ -1,0 +1,93 @@
+/* src/components/EmployeeRecentPayments.css */
+.recent-payments {
+    max-width: 600px; /* Set a maximum width for the list */
+    margin: 0 auto; /* Center the list */
+    padding: 20px; /* Add padding around the list */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f4f7fa; /* Light background color */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    font-family: 'Arial', sans-serif; /* Change font to Arial */
+}
+
+.recent-payments h1 {
+    text-align: center; /* Center the heading */
+    color: #2c3e50; /* Darker text color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.recent-payments label {
+    display: block; /* Block display for better spacing */
+    margin-bottom: 8px; /* Space below label */
+    font-weight: bold; /* Bold label text */
+    color: #34495e; /* Color for the label */
+}
+
+.recent-payments select {
+    width: 100%; /* Full width for select */
+    padding: 8px; /* Padding for select */
+    margin-bottom: 20px; /* Space below select */
+    border: 1px solid #ccc; /* Light border for select */
+    border-radius: 4px; /* Rounded corners for select */
+    font-size: 16px; /* Font size for select */
+    color: #34495e; /* Text color for select */
+}
+
+.recent-payments ul {
+    list-style-type: none; /* Remove bullet points from list */
+    padding: 0; /* Remove padding */
+}
+
+.recent-payments li {
+    margin-bottom: 20px; /* Space between list items */
+    padding: 15px; /* Padding inside list items */
+    border: 1px solid #bdc3c7; /* Light border for each payment */
+    border-radius: 8px; /* Rounded corners for list items */
+    background-color: #fff; /* White background for list items */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Light shadow for each payment */
+    transition: transform 0.2s; /* Transition for hover effect */
+}
+
+.recent-payments li:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.recent-payments li p {
+    margin: 5px 0; /* Space above and below paragraph text */
+    color: #2c3e50; /* Text color for payment details */
+}
+
+button {
+    background-color: #3498db; /* Blue background for buttons */
+    color: white; /* White text for buttons */
+    border: none; /* No border for buttons */
+    border-radius: 4px; /* Rounded corners for buttons */
+    padding: 10px 15px; /* Padding for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-right: 10px; /* Space between buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.error-message {
+    color: red; /* Red color for error messages */
+    text-align: center; /* Center error messages */
+    margin: 20px 0; /* Space around error messages */
+}
+
+.back-button {
+    margin-top: 20px; /* Space above the back button */
+    background-color: #e67e22; /* Orange background for back button */
+    color: white; /* White text for back button */
+    border: none; /* No border for back button */
+    border-radius: 4px; /* Rounded corners for back button */
+    padding: 10px 15px; /* Padding for back button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.back-button:hover {
+    background-color: #d35400; /* Darker orange on hover */
+}

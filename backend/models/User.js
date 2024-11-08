@@ -6,15 +6,26 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    trim: true, // Trim whitespace
-    lowercase: true, // Convert to lowercase
+    trim: true,
+    lowercase: true,
   },
   password: {
     type: String,
     required: true,
-    minlength: 6, // using a minimum password length of 6
+    minlength: 6,
+  },
+ 
+
+  failedAttempts: {
+    type: Number,
+    default: 0, // Track failed login attempts
+  },
+  lockoutUntil: {
+    type: Date,
+    default: null, // Track when the user should be unlocked
   },
 }, { timestamps: true });
+
 
 const User = mongoose.model('User', userSchema);
 

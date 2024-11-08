@@ -1,0 +1,78 @@
+.add-employee {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    position: relative; /* Ensure child elements can be positioned relative to this container */
+  }
+  
+  .add-employee h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .add-employee form div {
+    margin-bottom: 15px;
+  }
+  
+  .add-employee label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .add-employee input[type="email"],
+  .add-employee input[type="password"],
+  .add-employee input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .add-employee button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-employee button:hover {
+    background-color: #45a049;
+  }
+  
+  .error-message {
+    color: #d9534f;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .success-message {
+    color: #5cb85c;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .back-button {
+    background-color: transparent; /* Make background transparent */
+    color: #4CAF50; /* Text color */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    margin-bottom: 20px; /* Space below the button */
+    padding: 8px 12px; /* Add some padding for a better touch target */
+    /* Position it inside the container without absolute positioning */
+    align-self: flex-start; /* Aligns the button to the start of the flex container */
+  }
+  
+  .back-button:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  

@@ -51,7 +51,7 @@ const Register = () => {
       console.error("Registration error:", error);
       if (error.response) {
         // Check if the error message indicates an existing email
-        if (error.response.data.message === "Email already exists!") {
+        if (error.response.data.message === "User already exists") {
           setError("This email is already registered. Please use a different email.");
         } else {
           setError(error.response.data.message); // General error message

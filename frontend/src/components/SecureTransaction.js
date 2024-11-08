@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './SecureTransaction.css'; // Import the CSS file for styling
 
 const SecureTransaction = () => {
+  const navigate = useNavigate(); // Hook for navigation
   const [recipient, setRecipient] = useState('');
   const [amount, setAmount] = useState('');
   const [cardNumber, setCardNumber] = useState('');
@@ -59,6 +61,10 @@ const SecureTransaction = () => {
     } catch (error) {
       setError('An error occurred during payment processing.');
     }
+  };
+
+  const handleBack = () => {
+    navigate('/home'); // Navigate back to the home page
   };
 
   return (
@@ -128,11 +134,16 @@ const SecureTransaction = () => {
 
         {success && (
           <div className="secure-transaction-success">
-            <h3>Payment Successful!</h3>
+            <h3>Payment pending!</h3>
             <p>Recipient: {paymentInfo.recipient}</p>
             <p>Amount: {paymentInfo.amount} {paymentInfo.currency}</p> {/* Display amount and currency */}
           </div>
         )}
+
+        {/* Back button */}
+        <button onClick={handleBack} className="secure-transaction-button" style={{ marginTop: '20px', backgroundColor: '#007BFF' }}>
+          Back to Home
+        </button>
       </div>
     </div>
   );

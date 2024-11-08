@@ -35,8 +35,10 @@ body {
   font-weight: 600;
   color: #4a4a4a;
   margin-bottom: 25px;
-  background: -webkit-linear-gradient(left, #28a745, #218838);
+  background: -webkit-linear-gradient(to left, #28a745, #218838); /* Updated syntax */
+  background: linear-gradient(to left, #28a745, #218838); /* Updated syntax */
   -webkit-background-clip: text;
+  background-clip: text; /* Include standard property for compatibility */
   -webkit-text-fill-color: transparent;
 }
 
@@ -148,5 +150,10 @@ body {
 
   .secure-transaction-button {
     font-size: 16px;
+  }
+
+  .secure-transaction-field input,
+  .secure-transaction-field select {
+    padding: 10px; /* Adjust padding for smaller screens */
   }
 }

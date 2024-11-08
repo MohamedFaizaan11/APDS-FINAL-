@@ -1,0 +1,62 @@
+/* src/components/EmployeeDashBoard.css */
+body {
+    font-family: 'Arial', sans-serif; /* Modern font for better readability */
+    background-color: #e9ecef; /* Light gray background for the whole page */
+  }
+  
+  .employee-dashboard {
+    padding: 40px; /* Increased padding for more breathing room */
+    background-color: white; /* Clean white background for the dashboard */
+    border-radius: 12px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    max-width: 600px; /* Set a maximum width for the dashboard */
+    margin: 40px auto; /* Center the dashboard with vertical margin */
+    text-align: center; /* Center align all text within the dashboard */
+  }
+  
+  h1 {
+    color: #007bff; /* Bootstrap primary color for the title */
+    font-size: 28px; /* Larger font size for the title */
+    margin-bottom: 20px; /* Space below the title */
+  }
+  
+  .dashboard-content {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #495057; /* Darker gray for body text for contrast */
+  }
+  
+  .dashboard-button,
+  .logout-button {
+    margin: 10px 5px;
+    padding: 12px 24px; /* Increased padding for buttons */
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth background transition */
+  }
+  
+  .dashboard-button {
+    background-color: #007bff; /* Bootstrap primary color */
+  }
+  
+  .dashboard-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  .logout-button {
+    background-color: #dc3545; /* Bootstrap danger color */
+  }
+  
+  .logout-button:hover {
+    background-color: #c82333; /* Darker shade on hover */
+  }
+  
+  .footer {
+    margin-top: 30px; /* Space above footer */
+    font-size: 14px; /* Smaller font size for footer */
+    color: #868e96; /* Lighter gray for footer text */
+  }
+  
