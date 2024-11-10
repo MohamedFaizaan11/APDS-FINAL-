@@ -14,18 +14,24 @@ const userSchema = new mongoose.Schema({
     required: true,
     minlength: 6,
   },
- 
-
+  idNumber: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  accountNumber: {
+    type: String,
+    unique: true,
+  },
   failedAttempts: {
     type: Number,
-    default: 0, // Track failed login attempts
+    default: 0,
   },
   lockoutUntil: {
     type: Date,
-    default: null, // Track when the user should be unlocked
+    default: null,
   },
 }, { timestamps: true });
-
 
 const User = mongoose.model('User', userSchema);
 

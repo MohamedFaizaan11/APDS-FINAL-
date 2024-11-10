@@ -6,6 +6,7 @@ import './Register.css';
 
 const Register = () => {
   const [email, setEmail] = useState('');
+  const [idNumber, setIdNumber] = useState(''); // New state for ID number
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
@@ -37,29 +38,46 @@ const Register = () => {
       return;
     }
 
+    // Validate ID Number (basic validation, adjust as needed)
+    if (!idNumber.trim()) {
+      setError("Please enter your ID number.");
+      return;
+    }
+
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      const response = await axios.post('http://localhost:5000/api/auth/register', { // Ensure using HTTPS
         email,
         password,
+        idNumber, // Include ID number in the request
       });
-      alert(response.data.message);
-      setEmail('');
-      setPassword('');
-      setConfirmPassword('');
-      navigate('/');
+
+      if (response.data.success) {
+        alert(response.data.message);
+        setEmail('');
+        setIdNumber(''); // Reset ID number
+        setPassword('');
+        setConfirmPassword('');
+        navigate('/home');
+      } else {
+        setError(response.data.message || 'Registration failed. Please try again.');
+      }
     } catch (error) {
       console.error("Registration error:", error);
       if (error.response) {
-        // Check if the error message indicates an existing email
+        // Check if the error message indicates an existing email or ID number
         if (error.response.data.message === "User already exists") {
-          setError("This email is already registered. Please use a different email.");
+          setError("This email or ID number is already registered. Please use different credentials.");
         } else {
-          setError(error.response.data.message); // General error message
+          setError(error.response.data.message || 'Registration failed. Please try again.');
         }
       } else {
-        setError('An unexpected error occurred');
+        setError('An unexpected error occurred.');
       }
     }
+  };
+
+  const goToLogin = () => {
+    navigate('/login');
   };
 
   return (
@@ -75,6 +93,16 @@ const Register = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+            />
+          </div>
+          <div className="input-group">
+            <label>ID Number:</label>
+            <input
+              type="text"
+              value={idNumber}
+              onChange={(e) => setIdNumber(e.target.value)}
+              required
+              placeholder="Enter your ID number"
             />
           </div>
           <div className="input-group password-container">
@@ -109,6 +137,9 @@ const Register = () => {
           </div>
           <button type="submit" className="register-button">Register</button>
         </form>
+        <div className="login-link">
+          <p>Already have an account? <button onClick={goToLogin}>Login here</button></p>
+        </div>
       </div>
     </div>
   );

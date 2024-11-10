@@ -1,6 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
-const { body, validationResult } = require('express-validator'); // Import express-validator
+const { body, validationResult } = require('express-validator');
 const User = require('../models/User');
 const router = express.Router();
 
@@ -8,12 +8,18 @@ const router = express.Router();
 const MAX_ATTEMPTS = 3; // Maximum login attempts
 const LOCKOUT_DURATION = 5 * 60 * 1000; // Lockout period in milliseconds (5 minutes)
 
+// Helper function to generate a unique account number
+const generateAccountNumber = () => {
+  return 'ACCT' + Math.floor(1000000000 + Math.random() * 9000000000); // 10-digit account number
+};
+
 // Registration route
 router.post(
   '/register',
   [
     body('email').isEmail().withMessage('Please provide a valid email address'),
-    body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long')
+    body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long'),
+    body('idNumber').isLength({ min: 13, max: 13 }).withMessage('ID number must be 13 digits')
   ],
   async (req, res) => {
     const errors = validationResult(req); // Check for validation errors
@@ -21,7 +27,7 @@ router.post(
       return res.status(400).json({ success: false, errors: errors.array() });
     }
 
-    const { email, password } = req.body;
+    const { email, password, idNumber } = req.body;
 
     try {
       // Checking if the user already exists
@@ -32,12 +38,19 @@ router.post(
 
       // Hashing password before saving
       const hashedPassword = await bcrypt.hash(password, 10);
-      const newUser = new User({ email, password: hashedPassword });
+      const accountNumber = generateAccountNumber(); // Generate a unique account number
+      const newUser = new User({ email, password: hashedPassword, idNumber, accountNumber });
 
       // Save the new user to the database
       await newUser.save();
 
-      res.status(201).json({ success: true, message: 'User registered successfully' });
+      res.status(201).json({ 
+        success: true, 
+        message: 'User registered successfully', 
+        email: newUser.email, 
+        idNumber: newUser.idNumber, 
+        accountNumber: newUser.accountNumber 
+      });
     } catch (error) {
       console.error("Error registering user:", error);
       res.status(500).json({ success: false, message: 'Error registering user' });
@@ -98,7 +111,13 @@ router.post(
       await user.save();
 
       // If authentication is successful
-      res.status(200).json({ success: true, message: 'Login successful' });
+      res.status(200).json({ 
+        success: true, 
+        message: 'Login successful', 
+        email: user.email, 
+        idNumber: user.idNumber, 
+        accountNumber: user.accountNumber 
+      });
     } catch (error) {
       console.error("Error logging in user:", error);
       res.status(500).json({ success: false, message: 'Server error' });
