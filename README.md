@@ -1,65 +1,76 @@
-# Customer International Payments Portal
+# Secure Customer International Payments Portal
 
 ## Overview
-This project is a secure Customer International Payments Portal designed to facilitate international transactions while ensuring high-level security for user data and interactions. The portal integrates a backend API and frontend, built using either React or Angular, focusing on password management, input validation, SSL encryption, and comprehensive attack prevention.
+This project involves the development of a **Customer International Payments Portal** and an accompanying **API** using **React** or **Angular**. The primary focus is to ensure robust security, data protection, and adherence to industry best practices to safeguard against vulnerabilities. The final submission will include a recorded demonstration of the application in action.
 
-## Key Features
-Secure Password Handling: Passwords are hashed and salted before being stored to prevent unauthorized access.
-Input Validation: All user inputs are validated and whitelisted using Regular Expressions (RegEx) to avoid malicious inputs.
-SSL Encryption: All traffic between users and the server is encrypted with SSL to ensure data confidentiality.
-Protection Against Attacks: The system includes measures to protect against common web vulnerabilities and attacks, including:
-SQL Injection
-Cross-Site Scripting (XSS)
-Cross-Site Request Forgery (CSRF)
-Man-in-the-Middle (MitM) attacks
+## Features and Requirements
 
-## Technology Stack
-Frontend: React or Angular (choose based on your implementation)
-Backend: ASP.NET Core API
-Language: C# (for backend logic)
-Database: Mongo Database
+### Customer Portal (Frontend)
+- **Framework**: Developed using **React** or **Angular**.
+- **Password Security**:
+  - Passwords are stored securely using **hashing and salting** techniques.
+- **Input Validation**:
+  - All user input is validated and whitelisted using **RegEx patterns**.
+- **Secure Traffic**:
+  - All data transmission is encrypted and secured using **SSL**.
+- **Comprehensive Security**:
+  - Protection against various attacks such as **Cross-Site Scripting (XSS)**, **SQL Injection**, **Cross-Site Request Forgery (CSRF)**, and **Man-in-the-Middle (MITM)**.
+- **Pre-created Users**:
+  - User accounts are created manually as no user registration process is available.
+- **User Roles and Permissions**:
+  - Access control is implemented to restrict access to sensitive payment functions.
 
-## Installation
+### API Development
+- **Framework**: The accompanying **API** is developed using **Node.js**, **Express.js**, or other backend technologies as needed.
+- **Security Measures**:
+  - Passwords are secured with **hashing and salting**.
+  - Input is validated with **RegEx** to prevent invalid data submissions.
+  - SSL ensures secure communication between the client and server.
+  - Comprehensive security measures are applied to address common vulnerabilities, following the **OWASP Top Ten** guidelines.
+
+### Continuous Integration/Continuous Deployment (CI/CD)
+- **Version Control**: The project codebase is managed using a **GitHub repository**.
+- **Pipeline Setup**:
+  - **CircleCI** is configured for automated builds and testing.
+  - A **SonarQube** integration checks for code smells and security hotspots to maintain high code quality standards.
+
+### Demonstration Video
+A recorded demonstration showcasing the functionality of the project. 
+The video will cover:
+- Secure login and user authentication.
+- User interactions within the portal.
+- Demonstration of input validation and security measures.
+- API responses and secure data handling.
+
+LINK : https://youtu.be/ETICEHe2FWc?si=6BzTNUSg6Jjf2Eaq
+
+## Project Structure
+
+### Frontend
+- **Components**:
+  - **Login and Authentication** page.
+  - **Dashboard** for managing international payments.
+  - **Error Handling** components for alerts and notifications.
+- **Routing**:
+  - Implement secure routing with protected routes based on user roles.
+
+### Backend (API)
+- **Endpoints**:
+  - RESTful API endpoints for user management and payment operations.
+- **Middleware**:
+  - Includes middlewares for **input sanitization**, **authentication**, and **error handling**.
+
+## Installation and Setup
+
 ### Prerequisites
-Node.js and npm installed (for React/Angular)
-.NET SDK for ASP.NET Core
-Mongo Database
+- **Node.js** and **npm** installed.
+- **React** or **Angular CLI**.
+- **Git** for version control.
+- **CircleCI** account for CI/CD.
+- **SonarQube** for code analysis.
 
-## Steps to Run Locally
-### Clone the Repository:
-Copy code
-cd customer-payments-portal
-### Install Dependencies: 
-
-For React:
-Copy code
-cd frontend
-npm install
-
-For Angular:
-Copy code
-cd frontend
-npm install
-Configure Environment Variables:
-
-## Run the Application:
-
-### To start the frontend:
-Copy code
-npm start
-
-### To run the backend API:
-Copy code
-cd backend
-dotnet run
-
-## Security Measures
-
-Password Hashing and Salting: User passwords are hashed and salted before being stored in the database, using a secure hashing algorithm like bcrypt.
-Whitelist Inputs with RegEx: All form inputs are validated using Regular Expressions to ensure only valid data is accepted.
-SSL for All Traffic: SSL encryption is enforced for all communications between the frontend, backend, and database to ensure data security.
-Attack Prevention: The portal is protected against various types of web attacks, including:
-SQL Injection: All database queries use parameterized queries to avoid injection attacks.
-
-## Video Link:
-Watch a walkthrough of the portal here: https://youtu.be/_UxnXRBiPqs?si=qZ0sns-qQhBDakPC
+### Steps
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-repo/international-payments-portal.git
+   cd international-payments-portal
