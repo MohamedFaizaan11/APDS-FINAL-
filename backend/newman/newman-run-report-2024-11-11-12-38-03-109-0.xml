@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Postman Test" tests="4" time="0.229">
+  <testsuite name="Register" id="3acd5234-11fe-46ab-a750-307308ce498f" timestamp="2024-11-11T12:38:02.563Z" tests="0" failures="0" errors="0" time="0.177"/>
+  <testsuite name="Login" id="b955b43a-c3fc-4226-b1fb-2a0118c783e6" timestamp="2024-11-11T12:38:02.563Z" tests="0" failures="0" errors="0" time="0.016"/>
+  <testsuite name="Transactions" id="fd202df0-0e55-42f8-95b4-9f1b5fd15097" timestamp="2024-11-11T12:38:02.563Z" tests="0" failures="0" errors="0" time="0.010"/>
+  <testsuite name="Add employee user" id="d1d8406d-77b1-42a6-a784-684c93809373" timestamp="2024-11-11T12:38:02.563Z" tests="0" failures="0" errors="0" time="0.026"/>
+</testsuites>

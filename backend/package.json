@@ -5,8 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "test-api": "newman run ../APDSPART2.postman_collection.json -e --reporters cli,junit"
-
+    "test-api": "newman run ./test.postman_collection.json -e ./APDS_Enviroment.postman_environment.json --reporters cli,junit"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +26,7 @@
     "https": "^1.0.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.7.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "newman": "^6.2.1"
   }
 }

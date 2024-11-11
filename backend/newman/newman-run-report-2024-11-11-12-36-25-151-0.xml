@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Postman Test" tests="4" time="0.000">
+  <testsuite name="Register" id="f0f7467e-a659-4092-b3dd-fbdb078871e9" timestamp="2024-11-11T12:36:24.703Z" tests="0" failures="0" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+
+---
+]]></system-err>
+  </testsuite>
+  <testsuite name="Login" id="c3488436-3109-4523-8f22-9d9e855c24d1" timestamp="2024-11-11T12:36:24.703Z" tests="0" failures="0" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+
+---
+]]></system-err>
+  </testsuite>
+  <testsuite name="Transactions" id="6c8cfe96-e0d3-4e71-b7b3-c194d3c9c30b" timestamp="2024-11-11T12:36:24.703Z" tests="0" failures="0" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+
+---
+]]></system-err>
+  </testsuite>
+  <testsuite name="Add employee user" id="5a7215b9-0b51-4488-a662-6a78e95f2800" timestamp="2024-11-11T12:36:24.703Z" tests="0" failures="0" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+
+---
+]]></system-err>
+  </testsuite>
+</testsuites>
