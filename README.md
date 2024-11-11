@@ -70,8 +70,3 @@ LINK : https://youtu.be/ETICEHe2FWc?si=6BzTNUSg6Jjf2Eaq
 - **CircleCI** account for CI/CD.
 - **SonarQube** for code analysis.
 
-### Steps
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/your-repo/international-payments-portal.git
-   cd international-payments-portal
