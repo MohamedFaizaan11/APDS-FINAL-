@@ -10,12 +10,12 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            cd BACKEND
+            cd backend
             npm install
       - run:
           name: Start server in background
           command: |
-            cd BACKEND
+            cd backend
             npm start &
       - attach_workspace:
           at: ~/workspace
