@@ -5,6 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
+        "test-api": "newman run ../APDSPART2.postman_collection.json -e --reporters cli,junit"
+
   },
   "keywords": [],
   "author": "",
