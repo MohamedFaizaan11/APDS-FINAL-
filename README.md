@@ -38,7 +38,8 @@ This project involves the development of a **Customer International Payments Por
 A recorded demonstration showcasing the functionality of the project. 
 The video will cover:
 - Secure login and user authentication.
-- User interactions within the portal.
+- User interactions within the portal. Details for user:
+- email: user1@mail.com  password: Jake123!
 - Demonstration of input validation and security measures.
 - API responses and secure data handling.
 
